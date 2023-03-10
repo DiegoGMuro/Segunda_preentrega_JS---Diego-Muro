@@ -43,8 +43,10 @@ const viajes = [
 // Ingreso anio de nacimiento
 let anioNacimiento;
 
+
+
 do {
-    anioNacimiento = parseInt(prompt("Ingrese su año de nacimiento:"));
+    anioNacimiento = Number(prompt("Ingrese su año de nacimiento:"));
 } while (anioNacimiento <= 0 || !Number.isInteger(anioNacimiento));
 
 // Valido edad del usuario
@@ -67,12 +69,12 @@ if (edad < 18) {
     } while (destino !== "AMSTERDAM" && destino !== "BARCELONA" && destino !== "BERLIN" && destino !== "ROMA" && destino !== "LONDRES" && destino !== "PARIS");
 
     do {
-        cantidadPasajeros = parseInt(prompt("Ingrese la cantidad de pasajeros:"));
-    } while (isNaN(cantidadPasajeros) || cantidadPasajeros < 1);
+        cantidadPasajeros = Number(prompt("Ingrese la cantidad de pasajeros:"));
+    } while (isNaN(cantidadPasajeros) || cantidadPasajeros < 1 || !Number.isInteger(cantidadPasajeros));
 
     do {
-        cantidadDias = parseInt(prompt("Ingrese la cantidad de días de estancia:"));
-    } while (isNaN(cantidadDias) || cantidadDias < 1);
+        cantidadDias = Number(prompt("Ingrese la cantidad de días de estancia:"));
+    } while (isNaN(cantidadDias) || cantidadDias < 1 || !Number.isInteger(cantidadDias));
 
     // Busco el objeto Viaje segun el destino ingresado con find()
     const viajeSeleccionado = viajes.find(viaje => viaje.destino.toUpperCase() === destino);
